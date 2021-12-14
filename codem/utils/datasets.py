@@ -30,7 +30,7 @@ class simdatasets(object):
                                              truncation_strategy='longest_first', )
 
             if self.label[item]!=-1:
-                tokenize_result['input_ids'] = tokenize_result['input_ids'] + [self.label[item]] + [102]
+                tokenize_result['input_ids'] = tokenize_result['input_ids'] + [self.label[item]+1] + [102]
 
                 tokenize_result['attention_mask'] = tokenize_result['attention_mask'] + [1] + [1]
                 tokenize_result['token_type_ids'] = tokenize_result['token_type_ids'] + [0] + [0]
